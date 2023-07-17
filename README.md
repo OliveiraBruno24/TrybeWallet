@@ -50,8 +50,8 @@ Neste projeto, verificamos se você é capaz de:
   <summary><strong>🗓 Data de Entrega</strong></summary><br />
   
   * Este projeto é individual;
-  * São `X` dias de projeto;
-  * Data para entrega final do projeto: `DD/MM/YYYY - 14:00h`.
+  * Serão `4` dias de projeto;
+  * Data para entrega final do projeto: `11/08/2023 14:00`.
 
 </details>
 
@@ -138,7 +138,7 @@ Neste projeto, verificamos se você é capaz de:
 
     - No menu à direita, clique no link **"Assignees"** e escolha **seu usuário**.
 
-    - No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`.
+    - No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-032-a`.
 
   Caso tenha alguma dúvida, assista a [este vídeo explicativo](https://vimeo.com/362189205).
 
@@ -296,7 +296,7 @@ Neste projeto, verificamos se você é capaz de:
 Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário a seguir. 
 **Leva menos de 3 minutos!**
 
-[FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH)
+[FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH#cohort_hidden=CH32-A&template=betrybe/sd-0x-project-trybewallet-ts)
 
 </details>
 
