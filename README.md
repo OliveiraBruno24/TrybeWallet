@@ -62,9 +62,9 @@ Neste projeto, verificamos se você é capaz de:
 
   1. Clone o repositório
 
-  - Use o comando: `git clone git@github.com:tryber/sd-032-a-project-trybewallet.git`.
+  - Use o comando: `git clone git@github.com:tryber/sd-032-a-project-trybewallet-ts.git`.
   - Entre na pasta do repositório que você acabou de clonar:
-    - `cd sd-032-a-project-trybewallet`
+    - `cd sd-032-a-project-trybewallet-ts`
 
   2. Instale as dependências
 
@@ -78,7 +78,7 @@ Neste projeto, verificamos se você é capaz de:
     - Exemplo: `git checkout master`
   - Agora crie uma branch à qual você vai submeter os `commits` do seu projeto
     - Você deve criar uma branch no seguinte formato: `nome-de-usuario-nome-do-projeto`
-    - Exemplo: `git checkout -b joaozinho-sd-032-a-project-trybewallet`
+    - Exemplo: `git checkout -b joaozinho-sd-032-a-project-trybewallet-ts`
 
   4. Adicione as mudanças ao stage do Git e faça um `commit`
 
@@ -95,11 +95,11 @@ Neste projeto, verificamos se você é capaz de:
 
   5. Adicione a branch com o novo `commit` ao repositório remoto
 
-  - Usando o exemplo anterior: `git push -u origin joaozinho-sd-032-a-project-trybewallet`
+  - Usando o exemplo anterior: `git push -u origin joaozinho-sd-032-a-project-trybewallet-ts`
 
   6. Crie um novo Pull Request (PR)
 
-  - Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-032-a-project-trybewallet/pulls)
+  - Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-032-a-project-trybewallet-ts/pulls)
   - Clique no botão verde _"New pull request"_
   - Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
   - Coloque um título para a sua _Pull Request_
@@ -107,7 +107,7 @@ Neste projeto, verificamos se você é capaz de:
   - Clique no botão verde _"Create pull request"_
   - Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
   - **Não se preocupe em preencher mais nada por enquanto!**
-  - Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-032-a-project-trybewallet/pulls) e confira que o seu _Pull Request_ está criado
+  - Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-032-a-project-trybewallet-ts/pulls) e confira que o seu _Pull Request_ está criado
 
 </details>
 
@@ -296,7 +296,7 @@ Neste projeto, verificamos se você é capaz de:
 Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário a seguir. 
 **Leva menos de 3 minutos!**
 
-[FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH#cohort_hidden=CH32-A&template=betrybe/sd-032-a-project-trybewallet-ts)
+[FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH#cohort_hidden=CH32-A&template=betrybe/sd-032-a-project-trybewallet-ts-ts)
 
 </details>
 
@@ -307,7 +307,7 @@ Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência 
 
   Você pode estar se perguntando: *Como deixo meu projeto com um layout mais atrativo?* 🤔
 
-  Para isso, disponibilizamos [este protótipo do Figma](https://www.figma.com/file/ibAEAbS7A6EBprCvXJNhbt/%5BProjeto%5D%5BFrontend%5D-TrybeWallet?node-id=0%3A1)!
+  Para isso, disponibilizamos [este protótipo do Figma](https://www.figma.com/file/ibAEAbS7A6EBprCvXJNhbt/%5BProjeto%5D%5BFrontend%5D-trybewallet-ts?node-id=0%3A1)!
 
   ⚠️ A estilização de sua aplicação não será avaliada nesse projeto, portanto esse protótipo é apenas uma **sugestão** e seu uso é **opcional**. Sinta-se à vontade para modificar o layout e deixá-lo do seu jeito.
 
