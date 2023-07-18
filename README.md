@@ -401,7 +401,7 @@ Crie uma página para que a pessoa usuária gerencie a carteira de gastos em div
 ## 2. Crie um header para a página de carteira com as seguintes características:
 
 <details>
-<summary>O componente `Header` deve ser renderizado dentro do componente [`Wallet`](#página-da-carteira)</summary><br />
+<summary>O componente `Header` deve ser renderizado dentro do componente <a href="#página-da-carteira"><code>Wallet</code></a></summary><br />
 
 * <details><summary> Um elemento que exiba o e-mail da pessoa usuária que fez login:</summary>
 
