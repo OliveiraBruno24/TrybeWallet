@@ -5,3 +5,7 @@ import reducer from './reducers';
 const store = createStore(reducer, composeWithDevTools());
 
 export default store;
+
+if (window.Cypress) {
+  window.store = store;
+}
