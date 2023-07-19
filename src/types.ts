@@ -1,3 +1,4 @@
 export interface RootState {
-  email: any;
+  email: any,
+  user: any,
 }
