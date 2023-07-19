@@ -4,6 +4,7 @@ import { RootState } from '../../types';
 
 const INITIAL_STATE = {
   email: '',
+  user: '',
 };
 
 const userReducer = (state = INITIAL_STATE, action: AnyAction):RootState => {
