@@ -9,7 +9,6 @@ const getCoins = async () => {
     console.log(error);
   }
 };
-console.log(getCoins);
 
 export default getCoins;
 

@@ -10,7 +10,8 @@ function WalletForm() {
   useEffect(() => {
     const getCoinsList = async () => {
       const data = await getCoins();
-      dispatch(setCoin(Object.keys(data)));
+      const { USDT, ...newData } = data;
+      dispatch(setCoin(Object.keys(newData)));
     };
     getCoinsList();
   }, []);
