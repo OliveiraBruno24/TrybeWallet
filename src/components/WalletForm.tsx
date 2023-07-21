@@ -48,9 +48,9 @@ function WalletForm() {
 
       setExpenses('');
       setDescription('');
-      setCurrency('');
-      setSelectedMethod('');
-      setSelectedTag('');
+      setCurrency('USD');
+      setSelectedMethod('Dinheiro');
+      setSelectedTag('Alimentação');
     } catch (error) {
       console.log(error);
     }

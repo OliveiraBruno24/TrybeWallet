@@ -25,7 +25,7 @@ function Header() {
     return totalExpenses;
   };
 
-  const totalExpenses = mapDespesas();
+  const totalExpenses = mapDespesas().toFixed(2);
 
   console.log(totalExpenses);
   return (
