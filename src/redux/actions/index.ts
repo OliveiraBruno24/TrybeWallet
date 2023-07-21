@@ -4,8 +4,6 @@ export const SET_EXPENSES = 'SET_EXPENSES';
 export const SET_EXCHANGE_RATES = 'SET_EXCHANGE_RATES';
 export const SET_SUM = 'SET_SUM';
 
-export const SET_COTACAO = 'SET_COTACAO';
-
 export const setEmail = (email: string) => ({
   type: SET_EMAIL,
   payload: email,
@@ -21,11 +19,6 @@ export const setCoin = (currencies:string[]) => {
 export const addExpense = (expenses:any) => ({
   type: SET_EXPENSES,
   payload: expenses,
-});
-
-export const addCotacao = (cotacao:any) => ({
-  type: SET_COTACAO,
-  payload: cotacao,
 });
 
 export const addSum = (total:number) => ({

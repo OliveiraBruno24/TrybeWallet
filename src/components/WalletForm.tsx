@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import getCoins from '../utils/endPointAPI';
-import { addExpense, setCoin, addCotacao } from '../redux/actions';
+import { addExpense, setCoin } from '../redux/actions';
 import { GlobalState } from '../types';
 
 function WalletForm() {
@@ -27,9 +27,6 @@ function WalletForm() {
   const handleAddExpress = async () => {
     try {
       const data = await getCoins();
-      const { USDT, ...newData } = data;
-      await console.log('retorno do newData', (newData[currency]));
-      dispatch(addCotacao(newData[currency]));
 
       const newExpense = {
         id: nextExpenseId,
@@ -38,9 +35,8 @@ function WalletForm() {
         currency,
         method: selectedMethod,
         tag: selectedTag,
-        cotacao: newData[currency].ask,
         exchangeRates: {
-          ...moedas,
+          ...data,
         },
       };
       dispatch(addExpense(newExpense));
@@ -56,14 +52,6 @@ function WalletForm() {
     }
   };
 
-  // { id,
-  // value,
-  // currency,
-  // method,
-  // tag,
-  // description,
-  // exchangeRates;
-  // }
   return (
     <div>
       <div>

@@ -1,6 +1,7 @@
 export interface RootStateProps {
   email: any,
   user: any,
+  wallet: any
 }
 
 export interface WalletStateProps {
@@ -25,5 +26,4 @@ export interface ExpensesProps {
   method: string,
   tag: string,
   exchangeRates: object,
-  cotacao: string
 }
