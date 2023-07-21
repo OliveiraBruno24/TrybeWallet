@@ -38,7 +38,7 @@ function WalletForm() {
         currency,
         method: selectedMethod,
         tag: selectedTag,
-        cotação: newData[currency].ask,
+        cotacao: newData[currency].ask,
         exchangeRates: {
           ...moedas,
         },

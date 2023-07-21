@@ -1,6 +1,6 @@
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
 
-import { SET_COIN, SET_EXPENSES, SET_COTACAO } from '../actions';
+import { SET_COIN, SET_EXPENSES, SET_COTACAO, SET_SUM } from '../actions';
 
 const INITIAL_STATE = {
   currencies: [], // array de string
@@ -26,6 +26,11 @@ const userWallet = (state = INITIAL_STATE, action:any) => {
       return {
         ...state,
         cotacao: action.payload,
+      };
+    case SET_SUM:
+      return {
+        ...state,
+        total: action.payload,
       };
 
     default:
