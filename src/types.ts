@@ -1,18 +1,29 @@
-export interface RootState {
+export interface RootStateProps {
   email: any,
   user: any,
 }
 
-export interface WalletState {
+export interface WalletStateProps {
   payload: any;
   type: any;
   currencies: [],
-  expenses: [],
+  expenses: ExpensesProps,
   editor: false,
   idToEdit:number,
 }
 
 export interface GlobalState {
-  user: RootState,
-  wallet:WalletState
+  user: RootStateProps,
+  wallet:WalletStateProps
+}
+
+export interface ExpensesProps {
+  id: number,
+  value: string,
+  description: string,
+  currency: string,
+  method: string,
+  tag: string,
+  exchangeRates: object,
+  cotacao: string
 }

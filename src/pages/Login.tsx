@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setEmail } from '../redux/actions';
-import { RootState } from '../types';
+import { RootStateProps } from '../types';
 
 function Login() {
   // const [email, setEmail] = useState('');
@@ -14,7 +14,7 @@ function Login() {
   const [isValidPassword, setIsValidPassword] = useState<boolean>(false);
 
   const dispatch = useDispatch();
-  const email = useSelector((state:RootState) => state.email);
+  const email = useSelector((state:RootStateProps) => state.email);
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const navigate = useNavigate();
 

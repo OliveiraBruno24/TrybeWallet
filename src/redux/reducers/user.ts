@@ -1,13 +1,13 @@
 import { AnyAction } from 'redux';
 import { SET_EMAIL } from '../actions';
-import { RootState } from '../../types';
+import { RootStateProps } from '../../types';
 
 const INITIAL_STATE = {
   email: '',
   user: '',
 };
 
-const userReducer = (state = INITIAL_STATE, action: AnyAction):RootState => {
+const userReducer = (state = INITIAL_STATE, action: AnyAction):RootStateProps => {
   switch (action.type) {
     case SET_EMAIL:
       return {
