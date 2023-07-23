@@ -9,7 +9,7 @@ const INITIAL_STATE = {
   editor: false, // valor booleano que indica se uma despesa está sendo editada
   idToEdit: 0,
   // cotacao: 0,
-  // total: 0,
+  total: 0,
 };
 
 const userWallet = (state = INITIAL_STATE, action:any) => {

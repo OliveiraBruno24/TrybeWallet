@@ -1,8 +1,11 @@
 import { useSelector } from 'react-redux';
+import { useState } from 'react';
 import { RootStateProps } from '../types';
 
 function Header() {
   const rootState = useSelector((state:RootStateProps) => state);
+  console.log(rootState);
+  const [totalValue, setTotalValue] = useState(0);
 
   return (
     <div>

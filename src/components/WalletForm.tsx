@@ -21,7 +21,7 @@ function WalletForm() {
       dispatch(setCoin(Object.keys(newData)));
     };
     getCoinsList();
-  }, []);
+  }, [dispatch]);
   const moedas = useSelector((state:GlobalState) => state.wallet.currencies);
 
   const handleAddExpress = async () => {
