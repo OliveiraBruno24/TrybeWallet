@@ -38,7 +38,6 @@ function Login() {
 
   const handleLogin = () => {
     if (password.length >= 6 && isValidEmail === true) {
-      // dispatch(setEmail(email));
       navigate('/carteira');
     }
   };
