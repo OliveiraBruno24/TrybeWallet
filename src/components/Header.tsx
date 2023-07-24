@@ -1,5 +1,4 @@
 import { useSelector } from 'react-redux';
-import { useState } from 'react';
 import { RootStateProps } from '../types';
 
 function Header() {

@@ -1,7 +1,21 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteExpense } from '../redux/actions';
 
 function Table() {
   const { expenses } = useSelector((state:any) => state.wallet);
+  const dispatch = useDispatch();
+
+  const handleDelete = (
+    event:React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    expenseIdToDelete: number,
+  ) => {
+    // const idSelect = expenses;
+    // console.log(idSelect);
+    // quando clico no botão, tenho acesso ao id que esta em wallet.expenses.id
+    // basta fazer um find pelo id e remover ele do estado global.
+    event.preventDefault();
+    dispatch(deleteExpense(expenseIdToDelete));
+  };
   return (
     <table>
       <thead>
@@ -31,6 +45,19 @@ function Table() {
               <td>{ Number(expense.exchangeRates[expense.currency].ask).toFixed(2) }</td>
               <td>{ (cotacao * Number(expense.value)).toFixed(2) }</td>
               <td>Real</td>
+              <td>
+                <button>
+                  Editar
+
+                </button>
+                <button
+                  data-testid="delete-btn"
+                  onClick={ (e) => handleDelete(e, expense.id) }
+                >
+                  Excluir
+
+                </button>
+              </td>
             </tr>
           );
         })}

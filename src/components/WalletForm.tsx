@@ -24,9 +24,10 @@ function WalletForm() {
   }, [dispatch]);
   const moedas = useSelector((state:GlobalState) => state.wallet.currencies);
 
-  const handleAddExpress = async () => {
+  const handleAddExpenses = async () => {
     try {
       const data = await getCoins();
+      setNextExpenseId((prevId) => prevId + 1);
 
       const newExpense = {
         id: nextExpenseId,
@@ -40,7 +41,6 @@ function WalletForm() {
         },
       };
       dispatch(addExpense(newExpense));
-      setNextExpenseId((prevId) => prevId + 1);
 
       setExpenses('');
       setDescription('');
@@ -121,7 +121,7 @@ function WalletForm() {
 
       <div>
         <button
-          onClick={ handleAddExpress }
+          onClick={ handleAddExpenses }
         >
           Adicionar despesa
 

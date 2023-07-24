@@ -1,7 +1,7 @@
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
 
-import { ExpensesProps } from '../../types';
-import { SET_COIN, SET_EXPENSES, SET_SUM } from '../actions';
+import calculateTotal from '../../components/calculaTotal';
+import { REMOVE_EXPENSE, SET_COIN, SET_EXPENSES } from '../actions';
 
 const INITIAL_STATE = {
   currencies: [], // array de string
@@ -19,25 +19,25 @@ const userWallet = (state = INITIAL_STATE, action:any) => {
         ...state,
         currencies: action.payload,
       };
-    case SET_EXPENSES:
+    case SET_EXPENSES: // plota o total na tela
       return {
         ...state,
         expenses: [...state.expenses, action.payload],
-        total: [...state.expenses, action.payload].reduce((
-          acc: number,
-          expense: ExpensesProps,
-        ) => {
-          const value = parseFloat(expense.value);
-          const askValue = parseFloat(expense.exchangeRates[expense.currency].ask);
-          const sumExpense = value * askValue;
-          return acc + sumExpense;
-        }, 0).toFixed(2),
+        total: calculateTotal([...state.expenses, action.payload]),
       };
-    case SET_SUM:
+    case REMOVE_EXPENSE:
       return {
         ...state,
-        total: action.payload,
+        expenses: state.expenses.filter((expenseId) => expenseId.id !== action.payload),
+        total: calculateTotal(
+          state.expenses.filter((expense) => expense.id !== action.payload),
+        ),
       };
+      // case SET_SUM:
+      //   return {
+      //     ...state,
+      //     total: action.payload,
+      //   };
 
     default:
       return state;
