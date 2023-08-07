@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setEmail } from '../redux/actions';
 import { RootStateProps } from '../types';
 import {
-  ButtonLogin,
   MainStyle,
   Input,
   Label,

@@ -7,11 +7,17 @@ import { Inputt, WalletButton, Select } from '../styles';
 
 function WalletForm() {
   const dispatch = useDispatch();
+  const INITIAL_STATE = () => {
+    setExpenses('');
+    setDescription('');
+    setCurrency('USD');
+    setSelectedMethod('Dinheiro');
+    setSelectedTag('Alimentação');
+  };
 
   const [nextExpenseId, setNextExpenseId] = useState(0);
   const [expensess, setExpenses] = useState('');
   const [selectedMethod, setSelectedMethod] = useState('Dinheiro');
-  // eslint-disable-next-line sonarjs/no-duplicate-string
   const [selectedTag, setSelectedTag] = useState('Alimentação');
   const [description, setDescription] = useState('');
   const [currency, setCurrency] = useState('USD');
@@ -48,11 +54,7 @@ function WalletForm() {
       };
       dispatch(addExpense(newExpense));
 
-      setExpenses('');
-      setDescription('');
-      setCurrency('USD');
-      setSelectedMethod('Dinheiro');
-      setSelectedTag('Alimentação');
+      INITIAL_STATE();
     } catch (error) {
       console.log(error);
     }
@@ -76,11 +78,7 @@ function WalletForm() {
       };
       dispatch(editExpense(EditedExpense));
 
-      setExpenses('');
-      setDescription('');
-      setCurrency('USD');
-      setSelectedMethod('Dinheiro');
-      setSelectedTag('Alimentação');
+      INITIAL_STATE();
     } catch (error) {
       console.log(error);
     }

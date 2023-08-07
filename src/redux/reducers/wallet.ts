@@ -1,4 +1,3 @@
-import calculateTotal from '../../components/calculaTotal';
 import { Expense } from '../../types';
 import { REMOVE_EXPENSE, SET_COIN, SET_EXPENSES, UPDATE_EXPENSE,
   EXPENSE_EDITED } from '../actions';
