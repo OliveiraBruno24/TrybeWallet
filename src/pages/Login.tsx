@@ -6,6 +6,16 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setEmail } from '../redux/actions';
 import { RootStateProps } from '../types';
+import {
+  ButtonLogin,
+  MainStyle,
+  Input,
+  Label,
+  ElementsStyle,
+  Container,
+  Nav,
+  // InputWrapper, não utilizado.
+} from '../styles';
 
 function Login() {
   // const [email, setEmail] = useState('');
@@ -14,7 +24,7 @@ function Login() {
   const [isValidPassword, setIsValidPassword] = useState<boolean>(false);
 
   const dispatch = useDispatch();
-  const email = useSelector((state:RootStateProps) => state.email);
+  const email = useSelector((state: RootStateProps) => state.email);
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const navigate = useNavigate();
 
@@ -44,31 +54,46 @@ function Login() {
 
   return (
     <div>
-      <label htmlFor="email-input">E-mail:</label>
-      <input
-        type="email"
-        id="email-input"
-        data-testid="email-input"
-        value={ email }
-        placeholder="exemplo@email.com"
-        onChange={ handleEmailChange }
-      />
-      <br />
-      <label htmlFor="password-input">Senha:</label>
-      <input
-        type="password"
-        id="password-input"
-        data-testid="password-input"
-        value={ password }
-        placeholder="minimo de 6 caractéries"
-        onChange={ handlePasswordChange }
-      />
-      <button
-        onClick={ handleLogin }
-        disabled={ !isValidEmail || !isValidPassword }
-      >
-        Entrar
-      </button>
+      <MainStyle>
+        <Nav>
+          <img src="imgs/icons8-linkedin.svg" alt="icone linkedin" />
+          <a href="https://www.linkedin.com/in/eubrunodeoliveira/" target="_blank" rel="noreferrer">linkedin</a>
+          <img src="imgs/icons8-github.svg" alt="icone gitHub" />
+          <a href="https://github.com/OliveiraBruno24" target="_blank" rel="noreferrer">GitHub</a>
+        </Nav>
+        <Container>
+          <img src="src/components/logoTrybeWallet.png" alt="logo trybeWallet" />
+          <ElementsStyle>
+            <Label htmlFor="email-input">E-mail:</Label>
+            <Input
+              type="email"
+              id="email-input"
+              data-testid="email-input"
+              value={ email }
+              placeholder="exemplo@email.com"
+              onChange={ handleEmailChange }
+            />
+          </ElementsStyle>
+          <ElementsStyle>
+            <Label htmlFor="password-input">Senha:</Label>
+            <Input
+              type="password"
+              id="password-input"
+              data-testid="password-input"
+              value={ password }
+              placeholder="minimo de 6 caractéries"
+              onChange={ handlePasswordChange }
+            />
+          </ElementsStyle>
+          <button
+            onClick={ handleLogin }
+            disabled={ !isValidEmail || !isValidPassword }
+          >
+            Entrar
+          </button>
+        </Container>
+        <footer>Projeto desenvolvido por Bruno de Oliveira</footer>
+      </MainStyle>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteExpense } from '../redux/actions';
+import { deleteExpense, updateExpense } from '../redux/actions';
 
 function Table() {
   const { expenses } = useSelector((state:any) => state.wallet);
@@ -15,6 +15,10 @@ function Table() {
     // basta fazer um find pelo id e remover ele do estado global.
     event.preventDefault();
     dispatch(deleteExpense(expenseIdToDelete));
+  };
+
+  const handleEditButton = (expense:any) => {
+    dispatch(updateExpense(expense));
   };
   return (
     <table>
@@ -34,7 +38,9 @@ function Table() {
 
       <tbody>
         {expenses.map((expense: any) => {
-          const cotacao = (expense.exchangeRates[expense.currency].ask);
+          const cotacao = (expense.exchangeRates[expense.currency]?.ask);
+          // console.log('exchangeRates', expense.exchangeRates);
+          // console.log('com conchetes', expense.currency);
           return (
             <tr key={ expense.id }>
               <td>{ expense.description }</td>
@@ -42,13 +48,15 @@ function Table() {
               <td>{ expense.method }</td>
               <td>{ Number(expense.value).toFixed(2) }</td>
               <td>{ expense.exchangeRates[expense.currency].name }</td>
-              <td>{ Number(expense.exchangeRates[expense.currency].ask).toFixed(2) }</td>
+              <td>{ Number(expense.exchangeRates[expense.currency].ask).toFixed(2)}</td>
               <td>{ (cotacao * Number(expense.value)).toFixed(2) }</td>
               <td>Real</td>
               <td>
-                <button>
+                <button
+                  data-testid="edit-btn"
+                  onClick={ () => handleEditButton(expense) }
+                >
                   Editar
-
                 </button>
                 <button
                   data-testid="delete-btn"
@@ -63,7 +71,6 @@ function Table() {
         })}
       </tbody>
     </table>
-
   );
 }
 

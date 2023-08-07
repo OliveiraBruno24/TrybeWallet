@@ -5,6 +5,7 @@ import { RootStateProps } from '../../types';
 const INITIAL_STATE = {
   email: '',
   user: '',
+  wallet: '',
 };
 
 const userReducer = (state = INITIAL_STATE, action: AnyAction):RootStateProps => {

@@ -1,14 +1,13 @@
-// Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
-
 import calculateTotal from '../../components/calculaTotal';
-import { REMOVE_EXPENSE, SET_COIN, SET_EXPENSES } from '../actions';
+import { Expense } from '../../types';
+import { REMOVE_EXPENSE, SET_COIN, SET_EXPENSES, UPDATE_EXPENSE,
+  EXPENSE_EDITED } from '../actions';
 
 const INITIAL_STATE = {
-  currencies: [], // array de string
-  expenses: [], // array de objetos, com cada objeto tendo as chaves id, value, currency, method, tag, description e exchangeRates
-  editor: false, // valor booleano que indica se uma despesa está sendo editada
+  currencies: [],
+  expenses: [],
+  editor: false,
   idToEdit: 0,
-  // cotacao: 0,
   total: 0,
 };
 
@@ -23,22 +22,27 @@ const userWallet = (state = INITIAL_STATE, action:any) => {
       return {
         ...state,
         expenses: [...state.expenses, action.payload],
-        total: calculateTotal([...state.expenses, action.payload]),
       };
     case REMOVE_EXPENSE:
       return {
         ...state,
         expenses: state.expenses.filter((expenseId) => expenseId.id !== action.payload),
-        total: calculateTotal(
-          state.expenses.filter((expense) => expense.id !== action.payload),
-        ),
       };
-      // case SET_SUM:
-      //   return {
-      //     ...state,
-      //     total: action.payload,
-      //   };
+    case UPDATE_EXPENSE:
+      action.payload as Expense;
+      return ({
+        ...state,
+        editor: true,
+        idToEdit: action.payload.id,
+      });
+    case EXPENSE_EDITED:
+      return ({
+        ...state,
+        editor: false,
+        expenses:
+          state.expenses.map((e) => (e.id === action.payload.id ? action.payload : e)),
 
+      });
     default:
       return state;
   }
